@@ -1,0 +1,11 @@
+.gridContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 512em;
+}
+
+.gridItem{
+    color: aqua;
+    height: 2em;
+    width: 2em;
+}

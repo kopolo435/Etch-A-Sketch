@@ -10,6 +10,6 @@
     width: 2em;
 }
 
-.hoveredItem :hover{
+.hoveredItem{
   background-color: #00ffff52;
 }

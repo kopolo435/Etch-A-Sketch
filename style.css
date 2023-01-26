@@ -5,7 +5,11 @@
 }
 
 .gridItem{
-    background-color: aqua;
+    background-color: #00ffff;
     height: 2em;
     width: 2em;
+}
+
+.hoveredItem :hover{
+  background-color: #00ffff52;
 }

@@ -4,6 +4,12 @@
     width: 32em;
 }
 
+#newGrid{
+    padding: 0.5em;
+    margin: 1em;
+    background-color: darkgray;
+}
+
 .gridItem{
     background-color: #00ffff;
     height: 2em;

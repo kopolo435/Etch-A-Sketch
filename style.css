@@ -1,4 +1,4 @@
-.gridContainer{
+#gridContainer{
     display: flex;
     flex-wrap: wrap;
     width: 512em;

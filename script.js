@@ -12,6 +12,22 @@ function CheckHover(itemList){
     }))
 }
 
+function ChangeColor(item,option){
+    switch(option){
+        case 1:
+            item.classList.add("hoveredItem");
+          break;
+        case 2:
+            item.style.backgroundCOlor=random_rgba();
+            break;
+        case 3:
+            let actualColor=(window.getComputedStyle(item).getPropertyValue('background-color'));
+            actualColor=actualColor.slice(4,7);
+            actualColor=actualColor-25;
+            break;
+    }
+}
+
 function random_rgba() {
     let o = Math.round, r = Math.random, s = 255;
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';

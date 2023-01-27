@@ -1,10 +1,13 @@
-function CheckHover(itemList){
+function CheckHover(itemList,option){
     
     itemList.forEach(item => item.addEventListener('mouseover', () =>{ //Registra evento en el item y cambia su color
+    ChangeColor(item,option);
+    /*
     item.classList.add("hoveredItem");
     let actualColor=(window.getComputedStyle(item).getPropertyValue('background-color'));
     actualColor=actualColor.slice(4,7);
     actualColor=actualColor-25
+    */
     //item.style.backgroundColor='rgb('+actualColor+', '+actualColor+', '+actualColor+')';
   
     //item.style.backgroundColor=random_rgba();

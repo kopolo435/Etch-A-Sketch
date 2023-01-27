@@ -1,17 +1,27 @@
 function CheckHover(itemList){
     
     itemList.forEach(item => item.addEventListener('mouseover', () =>{ //Registra evento en el item y cambia su color
-    //item.classList.add("hoveredItem");
-    item.style.backgroundColor=random_rgba();
+    item.classList.add("hoveredItem");
+    let actualColor=(window.getComputedStyle(item).getPropertyValue('background-color'));
+    actualColor=actualColor.slice(4,7);
+    actualColor=actualColor-25
+    //item.style.backgroundColor='rgb('+actualColor+', '+actualColor+', '+actualColor+')';
+  
+    //item.style.backgroundColor=random_rgba();
+
     }))
 }
+
 function random_rgba() {
     let o = Math.round, r = Math.random, s = 255;
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
+
 const gridContainer=document.getElementById("gridContainer");
 const newGridButton=document.querySelector("#newGrid");
-
+const normalButton=document.querySelector('#normal');
+const rainbowButton=document.querySelector('#rainbow');
+const grayButton=document.querySelector('grayScale');
 
 for(let i=0;i<256;i++){ //Crea grid inicial de 16x16
     let gridItem=document.createElement("div");
@@ -49,4 +59,7 @@ newGridButton.addEventListener('click',() =>{
     
 })
 
+rainbowButton.addEventListener('click',()=>{
+    let option=2;
+})
 

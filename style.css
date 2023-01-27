@@ -1,7 +1,29 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(217, 252, 252);
+}
+
+main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 5em;
+}
+
 #gridContainer{
     display: flex;
     flex-wrap: wrap;
     width: 32em;
+    border: 2px solid red;
+}
+
+#buttonSet{
+    background-color: gray;
+    flex: 0 1 10em;
+    height: 15em;
+    align-self: center;
 }
 
 #newGrid{
@@ -11,11 +33,12 @@
 }
 
 .gridItem{
-    background-color: #00ffff;
+    background-color: rgb(255, 255, 255);
     height: 2em;
     width: 2em;
 }
 
 .hoveredItem{
-  background-color: #00ffff52;
+    /*background-color: rgb(255, 255, 255);*/
+    background-color: aqua;
 }

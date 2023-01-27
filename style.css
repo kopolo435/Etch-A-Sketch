@@ -20,9 +20,9 @@ main{
 }
 
 #buttonSet{
-    background-color: gray;
+    background-color: silver;
+    padding: 2em 2em;
     flex: 0 1 10em;
-    height: 15em;
     align-self: center;
     display: flex;
     flex-direction: column;

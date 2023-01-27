@@ -24,6 +24,10 @@ main{
     flex: 0 1 10em;
     height: 15em;
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
 }
 
 #newGrid{

@@ -1,10 +1,14 @@
 function CheckHover(itemList){
-    itemList=document.querySelectorAll(".gridItem");
+    
     itemList.forEach(item => item.addEventListener('mouseover', () =>{ //Registra evento en el item y cambia su color
-    item.classList.add("hoveredItem");
+    //item.classList.add("hoveredItem");
+    item.style.backgroundColor=random_rgba();
     }))
 }
-
+function random_rgba() {
+    let o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
 const gridContainer=document.getElementById("gridContainer");
 const newGridButton=document.querySelector("#newGrid");
 
@@ -15,7 +19,7 @@ for(let i=0;i<256;i++){ //Crea grid inicial de 16x16
     gridContainer.appendChild(gridItem);
     
 }
-
+itemList=document.querySelectorAll(".gridItem");
 CheckHover(itemList);
 
 newGridButton.addEventListener('click',() =>{
@@ -40,7 +44,7 @@ newGridButton.addEventListener('click',() =>{
         gridItem.style.height=itemDimension+'em';
         gridContainer.appendChild(gridItem);
     }
-    
+    itemList=document.querySelectorAll(".gridItem");
     CheckHover(itemList);
     
 })

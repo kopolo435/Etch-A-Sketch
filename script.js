@@ -2,17 +2,7 @@ function CheckHover(itemList,option){
     
     itemList.forEach(item => item.addEventListener('mouseover', () =>{ //Registra evento en el item y cambia su color
     ChangeColor(item,option);
-    /*
-    item.classList.add("hoveredItem");
-    let actualColor=(window.getComputedStyle(item).getPropertyValue('background-color'));
-    actualColor=actualColor.slice(4,7);
-    actualColor=actualColor-25
-    */
-    //item.style.backgroundColor='rgb('+actualColor+', '+actualColor+', '+actualColor+')';
-  
-    //item.style.backgroundColor=random_rgba();
-
-    }))
+    }));
 }
 
 function ChangeColor(item,option){
@@ -21,7 +11,7 @@ function ChangeColor(item,option){
             item.classList.add("hoveredItem");
           break;
         case 2:
-            item.style.backgroundCOlor=random_rgba();
+            item.style.backgroundColor=random_rgba();
             break;
         case 3:
             let actualColor=(window.getComputedStyle(item).getPropertyValue('background-color'));
@@ -49,7 +39,7 @@ for(let i=0;i<256;i++){ //Crea grid inicial de 16x16
     
 }
 itemList=document.querySelectorAll(".gridItem");
-CheckHover(itemList);
+CheckHover(itemList,1);
 
 newGridButton.addEventListener('click',() =>{
 
@@ -74,11 +64,12 @@ newGridButton.addEventListener('click',() =>{
         gridContainer.appendChild(gridItem);
     }
     itemList=document.querySelectorAll(".gridItem");
-    CheckHover(itemList);
+    //CheckHover(itemList);
     
 })
 
 rainbowButton.addEventListener('click',()=>{
-    let option=2;
+    CheckHover(itemList,2);
 })
+
 

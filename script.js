@@ -1,10 +1,14 @@
+/*
 function CheckHover(itemList,option){
+    let actualOption=option;
     
     itemList.forEach(item => item.addEventListener('mouseover', () =>{ //Registra evento en el item y cambia su color
-    ChangeColor(item,option);
-    }));
-}
+    ChangeColor(item,actualOption);
+    },{once:true}));
+    
 
+}
+*/
 function ChangeColor(item,option){
     switch(option){
         case 1:
@@ -17,6 +21,7 @@ function ChangeColor(item,option){
             let actualColor=(window.getComputedStyle(item).getPropertyValue('background-color'));
             actualColor=actualColor.slice(4,7);
             actualColor=actualColor-25;
+            item.style.backgroundColor="rgb("+actualColor+", "+actualColor+", "+actualColor+")";
             break;
     }
 }
@@ -30,7 +35,7 @@ const gridContainer=document.getElementById("gridContainer");
 const newGridButton=document.querySelector("#newGrid");
 const normalButton=document.querySelector('#normal');
 const rainbowButton=document.querySelector('#rainbow');
-const grayButton=document.querySelector('grayScale');
+const grayButton=document.querySelector('#grayScale');
 
 for(let i=0;i<256;i++){ //Crea grid inicial de 16x16
     let gridItem=document.createElement("div");
@@ -39,7 +44,6 @@ for(let i=0;i<256;i++){ //Crea grid inicial de 16x16
     
 }
 itemList=document.querySelectorAll(".gridItem");
-CheckHover(itemList,1);
 
 newGridButton.addEventListener('click',() =>{
 
@@ -64,12 +68,25 @@ newGridButton.addEventListener('click',() =>{
         gridContainer.appendChild(gridItem);
     }
     itemList=document.querySelectorAll(".gridItem");
-    //CheckHover(itemList);
     
+})
+let actualOption=0;
+normalButton.addEventListener('click',()=>{
+    //CheckHover(itemList,1);
+    actualOption=1;
 })
 
 rainbowButton.addEventListener('click',()=>{
-    CheckHover(itemList,2);
-})
+    //CheckHover(itemList,2);
+    actualOption=2;
+});
 
+grayButton.addEventListener('click',()=>{
+    //CheckHover(itemList,3);
+    actualOption=3;
+});
 
+itemList.forEach(item => item.addEventListener('mouseover', () =>{ //Registra evento en el item y cambia su color
+    ChangeColor(item,actualOption);
+    }));
+ 
